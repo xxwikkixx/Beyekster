@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.francisco.drowningdetector.VideoFramesGalleryFragment">
+
+    <GridView
+        android:id="@+id/videoFramesGallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="190dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:gravity="center"/>
+
+</FrameLayout>
