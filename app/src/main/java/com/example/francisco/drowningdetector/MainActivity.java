@@ -159,7 +159,7 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
     public void AlertPebble(){
         if(PebbleKit.isWatchConnected(getApplicationContext())){
             data = new PebbleDictionary();
-            data.addUint8(0, (byte) 42);
+            data.addUint8(1, (byte) 2);
             PebbleKit.sendDataToPebble(getApplicationContext(), PEBBLE_APP_UUID, data);
 
             PebbleKit.registerReceivedAckHandler(getApplicationContext(), new PebbleKit.PebbleAckReceiver(PEBBLE_APP_UUID) {
