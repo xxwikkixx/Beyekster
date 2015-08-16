@@ -26,4 +26,10 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':openCVLibrary2410')
+    compile 'com.getpebble:pebblekit:3.0.0@aar'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
 }
