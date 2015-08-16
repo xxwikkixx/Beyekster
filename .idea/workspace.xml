@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f95c36f-7ee1-4c5d-896f-03aebcf34c51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/pebblekit_3_0_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/francisco/drowningdetector/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/francisco/drowningdetector/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DrowningDetector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,13 +40,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/francisco/drowningdetector/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6">
-              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.21666667">
+              <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
               <folding>
-                <element signature="e#2849#3075#0" expanded="true" />
-                <element signature="e#3074#3075#0" expanded="true" />
-                <element signature="e#3157#3315#0" expanded="true" />
-                <element signature="e#3314#3315#0" expanded="true" />
+                <element signature="e#2940#3166#0" expanded="true" />
+                <element signature="e#3165#3166#0" expanded="true" />
+                <element signature="e#3248#3438#0" expanded="true" />
+                <element signature="e#3437#3438#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3265,10 +3263,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
           <folding>
-            <element signature="e#2849#3075#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3157#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#2940#3166#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3248#3438#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3307,10 +3305,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
           <folding>
-            <element signature="e#2849#3075#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3157#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#2940#3166#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3248#3438#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3393,10 +3391,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#2849#3075#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3157#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#2940#3166#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3248#3438#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3406,10 +3404,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#2849#3075#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3157#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#2940#3166#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3248#3438#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3514,13 +3512,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/francisco/drowningdetector/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6">
-          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.21666667">
+          <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
           <folding>
-            <element signature="e#2849#3075#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3157#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#2940#3166#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3248#3438#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
           </folding>
         </state>
       </provider>

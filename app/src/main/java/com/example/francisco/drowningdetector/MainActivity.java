@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getpebble.android.kit.PebbleKit;
+import com.getpebble.android.kit.util.PebbleDictionary;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -47,6 +48,7 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
     public static final String SERVICE_RECEIVER_TAG = "Receiver";
     public static final int SELECT_VIDEO = 1;
 
+    private PebbleDictionary data;
     static Mat imag = null;
     static Mat orgin = null;
     static Mat kalman = null;
@@ -97,7 +99,7 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
 
             @Override
             public void onReceive(Context context, Intent intent) {
-                
+                Log.i(TAG, "Pebble Disconnect");
             }
 
         });
@@ -156,7 +158,32 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
 
     public void AlertPebble(){
         if(PebbleKit.isWatchConnected(getApplicationContext())){
+            data = new PebbleDictionary();
+            data.addUint8(0, (byte) 42);
+            PebbleKit.sendDataToPebble(getApplicationContext(), PEBBLE_APP_UUID, data);
 
+            PebbleKit.registerReceivedAckHandler(getApplicationContext(), new PebbleKit.PebbleAckReceiver(PEBBLE_APP_UUID) {
+
+                @Override
+                public void receiveAck(Context context, int transactionId) {
+                    Log.i(getLocalClassName(), "Received ack for transaction " + transactionId);
+                }
+
+            });
+
+            PebbleKit.registerReceivedNackHandler(getApplicationContext(), new PebbleKit.PebbleNackReceiver(PEBBLE_APP_UUID) {
+
+                @Override
+                public void receiveNack(Context context, int transactionId) {
+                    if(data!= null){
+                        PebbleKit.sendDataToPebble(getApplicationContext(), PEBBLE_APP_UUID, data);
+                    } else {
+                        data = new PebbleDictionary();
+                        data.addUint8(0, (byte) 42);
+                    }
+                }
+
+            });
         }
     }
 
