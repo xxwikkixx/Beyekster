@@ -1,6 +1,8 @@
 package com.example.francisco.drowningdetector;
 
 import android.app.Activity;
+
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,6 +21,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.getpebble.android.kit.PebbleKit;
+import com.getpebble.android.kit.util.PebbleDictionary;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -41,12 +46,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.UUID;
 
 public class MainActivity extends ActionBarActivity implements CameraBridgeViewBase.CvCameraViewListener2{
 
+    private final static UUID PEBBLE_APP_UUID = UUID.fromString("55dcd496-71a9-4f14-83ae-9966d4dd19e4");
+
+    public static final String TAG = "MainActivity";
     public static final String SERVICE_RECEIVER_TAG = "Receiver";
     public static final int SELECT_VIDEO = 1;
 
+    private PebbleDictionary data;
     static Mat imag = null;
     static Mat orgin = null;
     static Mat kalman = null;
@@ -140,6 +150,24 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
+
+        PebbleKit.registerPebbleConnectedReceiver(getApplicationContext(), new BroadcastReceiver() {
+
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                PebbleKit.startAppOnPebble(getApplicationContext(), PEBBLE_APP_UUID);
+            }
+        });
+
+        PebbleKit.registerPebbleDisconnectedReceiver(getApplicationContext(), new BroadcastReceiver() {
+
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.i(TAG, "Pebble Disconnect");
+            }
+
+        });
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
 
@@ -190,6 +218,37 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
         toast.show();
 
         return true;
+    }
+
+    public void AlertPebble(){
+        if(PebbleKit.isWatchConnected(getApplicationContext())){
+            data = new PebbleDictionary();
+            data.addUint8(1, (byte) 2);
+            PebbleKit.sendDataToPebble(getApplicationContext(), PEBBLE_APP_UUID, data);
+
+            PebbleKit.registerReceivedAckHandler(getApplicationContext(), new PebbleKit.PebbleAckReceiver(PEBBLE_APP_UUID) {
+
+                @Override
+                public void receiveAck(Context context, int transactionId) {
+                    Log.i(getLocalClassName(), "Received ack for transaction " + transactionId);
+                }
+
+            });
+
+            PebbleKit.registerReceivedNackHandler(getApplicationContext(), new PebbleKit.PebbleNackReceiver(PEBBLE_APP_UUID) {
+
+                @Override
+                public void receiveNack(Context context, int transactionId) {
+                    if(data!= null){
+                        PebbleKit.sendDataToPebble(getApplicationContext(), PEBBLE_APP_UUID, data);
+                    } else {
+                        data = new PebbleDictionary();
+                        data.addUint8(0, (byte) 42);
+                    }
+                }
+
+            });
+        }
     }
 
 
