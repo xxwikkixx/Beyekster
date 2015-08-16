@@ -1,2 +1,3 @@
-include ':app'
+include ':app', ':PebbleKit'
 include ':openCVLibrary2410'
+project(':PebbleKit').projectDir = new File('app/libs/PebbleKit/PebbleKit')
