@@ -103,7 +103,7 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
     public void onResume() {
         super.onResume();
         //mOpenCvCameraView.enableView();
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback); opencv manager
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
     }
 
 
@@ -125,10 +125,10 @@ public class MainActivity extends ActionBarActivity implements CameraBridgeViewB
         mOpenCvCameraView.enableView();
         Toast toast = Toast.makeText(this, toastMesage, Toast.LENGTH_LONG);
         toast.show();
+
+        return true;
     }
 
-    return true;
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
