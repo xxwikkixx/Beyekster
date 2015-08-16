@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Beyekster.iml" filepath="$PROJECT_DIR$/Beyekster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrowningDetector.iml" filepath="$PROJECT_DIR$/DrowningDetector.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/libs/PebbleKit/PebbleKit/PebbleKit.iml" filepath="$PROJECT_DIR$/app/libs/PebbleKit/PebbleKit/PebbleKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary2410/openCVLibrary2410.iml" filepath="$PROJECT_DIR$/openCVLibrary2410/openCVLibrary2410.iml" />
